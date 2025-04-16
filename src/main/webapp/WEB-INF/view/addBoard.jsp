@@ -3,30 +3,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>글쓰기</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+	body { background: #fff; color: #212529; font-family: 'Segoe UI'; padding: 30px; }
+	.container { max-width: 700px; margin: auto; }
+	.card { background: #f8f9fa; border: 1px solid #ced4da; border-radius: 8px; padding: 20px; }
+	.btn-custom { background: #495057; color: white; }
+	.btn-custom:hover { background: #343a40; }
+</style>
 </head>
 <body>
-	<h1>작성</h1>
-	<form method="post" action="<%= request.getContextPath() %>/addBoard">
-		<div>
-			<label>작성자</label><br>
-			<input type="text" name="boardUser" required>
+<div class="container">
+	<h2 class="mb-4">📝</h2>
+	<form method="post" action="${pageContext.request.contextPath}/addBoard">
+		<div class="mb-3">
+			<label class="form-label">작성자</label>
+			<input type="text" name="boardUser" class="form-control" required>
 		</div>
-			<div>
-			<label>비밀번호</label><br>
-			<input type="password" name="boardPw" required>
+		<div class="mb-3">
+			<label class="form-label">제목</label>
+			<input type="text" name="boardTitle" class="form-control" required>
 		</div>
-			<div>
-			<label>제목</label><br>
-			<input type="text" name="boardTitle" required>
+		<div class="mb-3">
+			<label class="form-label">내용</label>
+			<textarea name="boardContent" class="form-control" rows="5" required></textarea>
 		</div>
-			<div>
-			<label>내용</label><br>
-			<textarea name="boardContent" rows="5" cols="40" required></textarea>
+		<div class="mb-3">
+			<label class="form-label">비밀번호</label>
+			<input type="password" name="boardPw" class="form-control" required>
 		</div>
-		<div>
-			<button type="submit">작성완료</button>
-		</div>
+		<button type="submit" class="btn btn-custom">등록</button>
 	</form>
+</div>
 </body>
 </html>
