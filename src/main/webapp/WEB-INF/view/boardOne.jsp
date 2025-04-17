@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="mvcboard.dto.Board" %>
-<%
-	Board board = (Board) request.getAttribute("board");
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +15,22 @@
 </style>
 </head>
 <body>
+<%
+	Board board = (Board) request.getAttribute("board");
+	// 확인코드는 중요하다
+	// 실무에서는 밑에 오브젝트 타입의 코드가 좋다. ( 검사를 하기 때문에 )
+	/* 
+	 Object o = request.getPagameter("board");
+		Board board = null;
+		if(obj instanceof Board) {
+			board = (board)obj;
+		}
+		if(board != null) {
+		열고 닫기 해야한다	
+			//	<%=board.toSting()
+		}
+	*/
+%>
 <div class="container">
 	<h2 class="mb-4">📄</h2>
 	<div class="card">

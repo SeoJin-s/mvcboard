@@ -84,8 +84,9 @@
 	%>
 		<div class="card mb-3 shadow-sm">
 			<div class="card-body">
-				<h5 class="card-title mb-1">
-					<a href="boardOne?boardNo=<%= b.getBoardNo() %>"><%= b.getBoardTitle() %></a>
+				<h5 class="card-title mb-1"> 
+					<a href="boardOne?boardNo=<%= b.getBoardNo() %>"><%= b.getBoardTitle() %></a> 
+					<!-- <a herf ="" -->
 				</h5>
 				<p class="mb-1 text-muted">👤 <%= b.getBoardUser() %></p>
 				<p class="mb-0 text-muted small">🕓 <%= b.getBoardDate() %></p>

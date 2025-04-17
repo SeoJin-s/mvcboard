@@ -32,6 +32,7 @@ public class BoardOneController extends HttpServlet {
 			
 			// 4. jsp
 			request.setAttribute("board", board);
+			// response.getWriter().print ("html...."); // view 협업 or 위임한다.
 			request.getRequestDispatcher("/WEB-INF/view/boardOne.jsp").forward(request, response);
 			
 		} catch(Exception e) {
